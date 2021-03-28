@@ -1,19 +1,14 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:iqstats/main_screen.dart';
 import 'package:iqstats/screens/video_list/components/action_list_data.dart';
 import 'package:iqstats/screens/video_list/components/action_list_title.dart';
 import 'package:iqstats/screens/video_list/components/ahly_logo.dart';
 import 'package:iqstats/screens/video_list/components/logo.dart';
 import '../../constant.dart';
 
-var deviceWidth;
-var deviceHeight;
-
 class VideoListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    deviceWidth = MediaQuery.of(context).size.width;
-    deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         width: deviceWidth,

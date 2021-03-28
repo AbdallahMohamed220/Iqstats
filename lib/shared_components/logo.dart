@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iqstats/screens/table/table.dart';
+import 'package:iqstats/main_screen.dart';
 
 class LogoWidget extends StatelessWidget {
   @override

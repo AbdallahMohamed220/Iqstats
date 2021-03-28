@@ -8,17 +8,10 @@ class AhlyImage extends StatelessWidget {
       padding: const EdgeInsets.only(
         left: 25,
       ),
-      child: InkWell(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => CompareScreen()),
-          );
-        },
-        child: Image.asset(
-          'assets/images/ahly.png',
-          width: 100,
-          height: 100,
-        ),
+      child: Image.asset(
+        'assets/images/ahly.png',
+        width: 100,
+        height: 100,
       ),
     );
   }

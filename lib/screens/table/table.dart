@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:iqstats/main_screen.dart';
 import 'package:iqstats/screens/table/components/ahly_image.dart';
 import 'package:iqstats/screens/table/components/ahly_title.dart';
+import 'package:iqstats/shared_components/change_layout/change_layout.dart';
 import 'package:iqstats/shared_components/logo.dart';
 import 'package:iqstats/screens/table/components/player_data.dart';
 
 import '../../constant.dart';
-import '../nav_bar.dart';
-
-var deviceWidth;
-var deviceHeight;
 
 class TableScreen extends StatefulWidget {
   @override
@@ -16,7 +14,6 @@ class TableScreen extends StatefulWidget {
 }
 
 class _TableScreenState extends State<TableScreen> {
-
   List<String> _matches = [
     'last 1 matches',
     'last 2 matches',
@@ -29,8 +26,6 @@ class _TableScreenState extends State<TableScreen> {
   String _selectedMatches;
   @override
   Widget build(BuildContext context) {
-    deviceWidth = MediaQuery.of(context).size.width;
-    deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         width: deviceWidth,
@@ -40,23 +35,6 @@ class _TableScreenState extends State<TableScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                LogoWidget(),
-                SizedBox(
-                  width: deviceWidth * .2,
-                ),
-                Container(
-                  width: deviceWidth * .5,
-                  height: 70,
-                  alignment: Alignment.center,
-                  child: Navbar(
-                    selectedIndex: 0,
-                    onItemSelected: (_) {},
-                  ),
-                )
-              ],
-            ),
             SizedBox(
               height: 20,
             ),
@@ -71,6 +49,7 @@ class _TableScreenState extends State<TableScreen> {
               height: 15,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(
@@ -109,46 +88,66 @@ class _TableScreenState extends State<TableScreen> {
                     Text('show player photo'),
                   ],
                 ),
-                Expanded(
-                  flex: 2,
-                  child: Center(
-                    child: Text('page name'),
+                SizedBox(
+                  width: 150,
+                ),
+                Container(
+                  width: 200,
+                  height: 30,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Page Name",
+                      fillColor: Colors.white,
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey),
+                      ),
+                    ),
                   ),
                 ),
-                Icon(Icons.perm_device_information_rounded),
-                Text('PDF'),
-                SizedBox(
-                  width: 30,
-                ),
-                Icon(Icons.perm_device_information_rounded),
-                Text('XLS'),
-                SizedBox(
-                  width: 30,
-                ),
-                Icon(Icons.perm_device_information_rounded),
-                Text('change table layout'),
-                SizedBox(
-                  width: 15,
+                Expanded(
+                  flex: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(Icons.perm_device_information_rounded),
+                      Text('PDF'),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Icon(Icons.perm_device_information_rounded),
+                      Text('XLS'),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Icon(Icons.perm_device_information_rounded),
+                      InkWell(
+                          onTap: () {
+                            changeLayout(context);
+                          },
+                          child: Text('change table layout')),
+                      SizedBox(
+                        width: 15,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-
             Container(
               width: double.infinity,
               height: deviceHeight / 1.65,
               child: SingleChildScrollView(
                 child: BuildPlayerData(
                   imgIsActive: isImgActive,
-                  columnHead: ['Ev1','Ev2','Ev3','Ev4','Ev5'],
+                  columnHead: ['Ev1', 'Ev2', 'Ev3', 'Ev4', 'Ev5'],
                   dataForEveryRow: [
-                    ['1','2','3','4','5'],
-                    ['1','2','3','4','5'],
-                    ['1','2','3','4','5'],
+                    ['1', '2', '3', '4', '5'],
+                    ['1', '2', '3', '4', '5'],
+                    ['1', '2', '3', '4', '5'],
                   ],
-                  ),
+                ),
               ),
             ),
-
           ],
         ),
       ),

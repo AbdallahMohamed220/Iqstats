@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iqstats/main_screen.dart';
 import 'package:iqstats/screens/compare/components/compare_data.dart';
 import 'package:iqstats/screens/compare/components/compare_title.dart';
-import 'package:iqstats/screens/nav_bar.dart';
-import 'package:iqstats/screens/table/table.dart';
-import 'package:iqstats/shared_components/logo.dart';
 
 import '../../constant.dart';
 
@@ -19,23 +17,6 @@ class CompareScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                LogoWidget(),
-                SizedBox(
-                  width: deviceWidth * .2,
-                ),
-                Container(
-                  width: deviceWidth * .5,
-                  height: 70,
-                  alignment: Alignment.center,
-                  child: Navbar(
-                    selectedIndex: 0,
-                    onItemSelected: (_) {},
-                  ),
-                )
-              ],
-            ),
             SizedBox(
               height: 60,
             ),

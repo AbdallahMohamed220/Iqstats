@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:iqstats/screens/video_list/video_list.dart';
+import 'package:iqstats/main_screen.dart';
 
-class ActionTitle extends StatelessWidget {
+class ChangeLayoutActionsTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

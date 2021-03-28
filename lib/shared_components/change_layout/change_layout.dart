@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iqstats/screens/video_list/video_list.dart';
-import 'package:iqstats/shared_components/change_layout/components/action_title.dart';
+import 'package:iqstats/main_screen.dart';
+import 'package:iqstats/shared_components/change_layout/components/change_layout_actions_title.dart';
 import 'package:iqstats/shared_components/change_layout/components/sub_action.dart';
 
 Future<void> changeLayout(BuildContext context) {
@@ -21,7 +21,7 @@ Future<void> changeLayout(BuildContext context) {
           builder: (context) {
             return Container(
               width: deviceWidth,
-              height: deviceHeight - 100,
+              height: deviceHeight - 200,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -34,7 +34,7 @@ Future<void> changeLayout(BuildContext context) {
                   SizedBox(
                     height: 50,
                   ),
-                  ActionTitle(),
+                  ChangeLayoutActionsTitle(),
                   SubActionTitle(),
                   SubActionTitle(),
                 ],
