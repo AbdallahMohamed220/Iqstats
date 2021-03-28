@@ -16,12 +16,16 @@ class TableScreen extends StatefulWidget {
 }
 
 class _TableScreenState extends State<TableScreen> {
+
   List<String> _matches = [
     'last 1 matches',
     'last 2 matches',
     'last 3 matches',
     'last 4 matches'
   ];
+
+  bool isImgActive = true;
+
   String _selectedMatches;
   @override
   Widget build(BuildContext context) {
@@ -95,8 +99,12 @@ class _TableScreenState extends State<TableScreen> {
                 Row(
                   children: [
                     Checkbox(
-                      value: false,
-                      onChanged: (_) {},
+                      value: isImgActive,
+                      onChanged: (newValue) {
+                        setState(() {
+                          isImgActive = newValue;
+                        });
+                      },
                     ),
                     Text('show player photo'),
                   ],
@@ -124,13 +132,23 @@ class _TableScreenState extends State<TableScreen> {
                 ),
               ],
             ),
+
             Container(
               width: double.infinity,
               height: deviceHeight / 1.65,
               child: SingleChildScrollView(
-                child: BuildPlayerData(),
+                child: BuildPlayerData(
+                  imgIsActive: isImgActive,
+                  columnHead: ['Ev1','Ev2','Ev3','Ev4','Ev5'],
+                  dataForEveryRow: [
+                    ['1','2','3','4','5'],
+                    ['1','2','3','4','5'],
+                    ['1','2','3','4','5'],
+                  ],
+                  ),
               ),
             ),
+
           ],
         ),
       ),
