@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iqstats/constant.dart';
 import 'package:iqstats/main_screen.dart';
-import 'package:iqstats/screens/video_list/video_list.dart';
 import 'package:iqstats/shared_components/change_layout/change_layout.dart';
 
 class ActionListData extends StatelessWidget {

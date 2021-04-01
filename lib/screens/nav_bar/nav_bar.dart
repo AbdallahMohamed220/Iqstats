@@ -27,6 +27,7 @@ class _NavbarState extends State<Navbar> {
     "Players",
     "teams",
     "Compare",
+    "Search",
   ];
 
   @override
@@ -70,16 +71,7 @@ class _NavbarState extends State<Navbar> {
                       case 'Goalkeepers':
                       case 'Players':
                       case 'teams':
-                        if (mounted) {
-                          setState(() {
-                            selectedIndex = items.indexOf(item);
-                          });
-
-                          if (widget.onItemSelected != null) {
-                            widget.onItemSelected(selectedIndex);
-                          }
-                        }
-                        break;
+                      case 'Search':
                       case 'Compare':
                         if (mounted) {
                           setState(() {

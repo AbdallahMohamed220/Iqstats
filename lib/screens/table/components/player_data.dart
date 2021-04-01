@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 
-
-
+// ignore: must_be_immutable
 class BuildPlayerData extends StatelessWidget {
-   BuildPlayerData({
-    Key key,
-    this.imgIsActive,
-    this.columnHead,
-    this.dataForEveryRow
-  }) : super(key: key);
+  BuildPlayerData(
+      {Key key, this.imgIsActive, this.columnHead, this.dataForEveryRow})
+      : super(key: key);
 
   List<String> columnHead;
   List<List<String>> dataForEveryRow;
-
 
   String playerName = "Mo salah";
   String playerNumber = "12";
@@ -21,8 +16,6 @@ class BuildPlayerData extends StatelessWidget {
 
   bool imgIsActive;
 
-  
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -30,58 +23,59 @@ class BuildPlayerData extends StatelessWidget {
       child: DataTable(
         dataRowHeight: 100,
         columns: <DataColumn>[
-          
           DataColumn(
             label: Text(''),
           ),
-
-          ... columnHead.map((col) => DataColumn(
-            label: Text(col),
-          ),).toList()
- 
+          ...columnHead
+              .map(
+                (col) => DataColumn(
+                  label: Text(col),
+                ),
+              )
+              .toList()
         ],
         rows: <DataRow>[
-
-          ... dataForEveryRow.map((arrayVals) => DataRow(
-            cells: <DataCell>[
-              DataCell(
-                Container(
-                  width: 160,
-                  child: Row(
-                    children: [
-                       imgIsActive ? Image.asset('assets/images/player.png') : SizedBox(),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 5.0),
-                              child: Text('$playerNumber  $playerName'),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 5.0),
-                              child: Text('$natiolaity'),
-                            ),
-                            Text('age  $age'),
-                          ],
+          ...dataForEveryRow
+              .map((arrayVals) => DataRow(
+                    cells: <DataCell>[
+                      DataCell(
+                        Container(
+                          width: 160,
+                          child: Row(
+                            children: [
+                              imgIsActive
+                                  ? Image.asset('assets/images/player.png')
+                                  : SizedBox(),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 5.0),
+                                      child: Text('$playerNumber  $playerName'),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 5.0),
+                                      child: Text('$natiolaity'),
+                                    ),
+                                    Text('age  $age'),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
+                      ...arrayVals.map((val) => DataCell(Text(val))).toList()
                     ],
-                  ),
-                ),
-              ),
-              ... arrayVals.map((val) => DataCell(Text(val))).toList()
-            ],
-          )).toList()
-          
-
-
+                  ))
+              .toList()
         ],
       ),
     );
   }
 }
-
-

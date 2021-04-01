@@ -3,7 +3,6 @@ import 'package:iqstats/main_screen.dart';
 import 'package:iqstats/screens/table/components/ahly_image.dart';
 import 'package:iqstats/screens/table/components/ahly_title.dart';
 import 'package:iqstats/shared_components/change_layout/change_layout.dart';
-import 'package:iqstats/shared_components/logo.dart';
 import 'package:iqstats/screens/table/components/player_data.dart';
 
 import '../../constant.dart';

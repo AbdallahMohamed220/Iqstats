@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iqstats/constant.dart';
 import 'package:iqstats/main_screen.dart';
-import 'package:iqstats/screens/table/table.dart';
-import 'package:iqstats/screens/video_list/video_list.dart';
 
 void main() {
   runApp(MyApp());

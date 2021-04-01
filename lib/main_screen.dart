@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iqstats/screens/compare/compare.dart';
 import 'package:iqstats/screens/nav_bar/nav_bar.dart';
+import 'package:iqstats/screens/search/search.dart';
 import 'package:iqstats/screens/table/table.dart';
 
 var deviceWidth;
@@ -46,6 +47,7 @@ class _PageBodyState extends State<PageBody> {
     TableScreen(),
     TableScreen(),
     CompareScreen(),
+    SearchScreen(),
   ];
 
   @override

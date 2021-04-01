@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iqstats/screens/compare/compare.dart';
 
 class AhlyImage extends StatelessWidget {
   @override
