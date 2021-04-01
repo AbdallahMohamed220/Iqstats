@@ -25,6 +25,7 @@ class _NavbarState extends State<Navbar> {
     "Overview",
     "Goalkeepers",
     "Players",
+    "Golas",
     "teams",
     "Compare",
     "Search",
@@ -71,6 +72,7 @@ class _NavbarState extends State<Navbar> {
                       case 'Goalkeepers':
                       case 'Players':
                       case 'teams':
+                      case 'Golas':
                       case 'Search':
                       case 'Compare':
                         if (mounted) {

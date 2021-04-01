@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iqstats/match_stats/MatchStats.dart';
 import 'package:iqstats/screens/compare/compare.dart';
 import 'package:iqstats/screens/nav_bar/nav_bar.dart';
 import 'package:iqstats/screens/search/search.dart';
@@ -45,6 +46,7 @@ class _PageBodyState extends State<PageBody> {
     TableScreen(),
     TableScreen(),
     TableScreen(),
+    MatchStats(),
     TableScreen(),
     CompareScreen(),
     SearchScreen(),
